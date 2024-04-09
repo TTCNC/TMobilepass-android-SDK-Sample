@@ -134,26 +134,26 @@
 
  - AndroidManifest.xml 에 아래와 같은 permission을 추가합니다.
  
-	 // FOR USE NFC
-     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+		 // FOR USE NFC
+		 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+		 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-     // FOR SAMPLE APPLICATION VIBRATION
-     <uses-permission android:name="android.permission.VIBRATE"/>
+		 // FOR SAMPLE APPLICATION VIBRATION
+		 <uses-permission android:name="android.permission.VIBRATE"/>
 	 	 
 
  - 프로젝트에 아래와 같이 import를 추가합니다.
  
-	 import android.nfc.NfcAdapter;
-	 
-	 import kr.co.ttcnc.ucsdk.dccctrllib.nfc.DccApduManager;
-	 import kr.co.ttcnc.ucsdk.dccctrllib.nfc.IDccConnectionHandler;
-	 import kr.co.ttcnc.ucsdk.dccctrllib.nfc.ReaderModel;
+		 import android.nfc.NfcAdapter;
+		 
+		 import kr.co.ttcnc.ucsdk.dccctrllib.nfc.DccApduManager;
+		 import kr.co.ttcnc.ucsdk.dccctrllib.nfc.IDccConnectionHandler;
+		 import kr.co.ttcnc.ucsdk.dccctrllib.nfc.ReaderModel;
 	 
  - Activity 함수에 NFC APDU 명령어 처리기를 추가합니다.
  
-	 // NFC APDU 명령어 처리기
-	 DccApduManager apduManager;
+		 // NFC APDU 명령어 처리기
+		 DccApduManager apduManager;
 
  - 
 	 
