@@ -22,27 +22,27 @@ Android : 5.0 ( minSDK : 23 / targetSDK : 33 )
  
 ## Features offered
 
-###크리덴셜 암호화 데이타 전송 
+### 1. 크리덴셜 암호화 데이타 전송 
 - [ ]  AES256/GCM , CBC 암복호화 알고리즘 지원
 - [ ]  16 Byte 크리덴셜 데이타 지원
 - [ ]  3-Pass Authentication 알고리즘 지원
 - setCryptoTocken , activeCryptoTocken , pauseCryptoTocken , setClearCryptoToken
 
-###크리덴셜 평문 데이타 전송
+### 2. 크리덴셜 평문 데이타 전송
 - [ ]  256 Byte 데이타 전송
 - setTocken , activeTocken , pauseTocken , setClearToken
 
-### 안드로이드 NFC 에 크리덴셜 키를 등록 하여 사용하는 Always-On 기능
+### 3. 안드로이드 NFC 에 크리덴셜 키를 등록 하여 사용하는 Always-On 기능
 
-### (v1.08)크리덴셜 + option 설정을 통한 서비스 구분 기능 제공.
+### 4. (v1.08)크리덴셜 + option 설정을 통한 서비스 구분 기능 제공.
 - [ ]  크리덴셜 키를 등록하면 , 어플이 종료 되거나 스마트폰이 리부팅 되어도 등록된 크리덴셜 키를 계속 서비스 하는 기능 제공
 - (v1.08)setCryptoTocken(sTokenValue,option,alivetime,isEncrypted); alivetime = 0 ( UNLIMITED_ALIVE_TIME )
 - setCryptoTocken(sTokenValue,alivetime,isEncrypted); alivetime = 0 ( UNLIMITED_ALIVE_TIME )
 
-### 어플리케이션 NFC 에 크리덴셜 키를 등록 하여 사용하는 어플리케이션이 살아 있는 동안기능 제공
+### 5. 어플리케이션 NFC 에 크리덴셜 키를 등록 하여 사용하는 어플리케이션이 살아 있는 동안기능 제공
 - [ ]  크리덴셜 키를 등록하면 , 어플이 종료 되기 전까지 크리덴셜 키를 계속 서비스 제공
 
-### 인드로이드 NFC 에 AID 등록하고 제거 기능을 제공하는 Security-On 기능 제공
+### 6. 안드로이드 NFC 에 AID 등록하고 제거 기능을 제공하는 Security-On 기능 제공
 - [ ]  20 ~ 60 초 사이의 시간에 NFC AID 와 크리덴셜 키 값을 활성화 하여 서비스 제공
 - [ ]  서비스 제공 시간 이외에는 해당 AID 서비스가 스마트폰에서는 노출되지 않음
  
@@ -55,7 +55,7 @@ Android : 5.0 ( minSDK : 23 / targetSDK : 33 )
 -alivetime:
 -isEncrypted:
 
-내용
+		내용
 
 ### activeCryptoTocken
 
@@ -64,7 +64,7 @@ Android : 5.0 ( minSDK : 23 / targetSDK : 33 )
 -alivetime:
 -isEncrypted:
 
-내용
+		내용
 
 
 ## Example
