@@ -62,7 +62,7 @@
  - [ ]  서비스 제공 시간 이외에는 해당 AID 서비스가 스마트폰에서는 노출되지 않음
  - setCryptoTocken(sTokenValue,alivetime,isEncrypted); // alivetime = MAX_ALIVE_TIME; (  20 <= iTimeout <= 60 )
 
- ### 7) 서버와의 통신 체널에도 암호화 데이타 서비스
+ ### 7) 서버와의 통신 채널에도 암호화 데이타 서비스
  - [ ]  getServerAes256Cbc() 해당 암호화 로직을 서버에서 구현하여 적용
  - [ ]  서버 암복호화 모듈에 getServerAes256Cbc() 함수에 해당하는 Java Native API ( JNI ) 로 구현된 로직 사용
  
@@ -79,9 +79,9 @@
  -  [ ] 단말기 지정이 잘못 된 경우 기능 동작이 정상적으로 되지 않음
  
  ### 10) Management Mode
- -  [ ] setNormalMode()  // 운영모드
- -  [ ] setManagementMode() // 설정모드
- -  [ ] getMode()  // 현재 모드
+ -  [ ] setNormalMode()  // 기본모드 설정 "00"
+ -  [ ] setManagementMode() // 관리모드 설정 "F0"
+ -  [ ] getMode()  // 모드 조회
  
  
  
@@ -235,7 +235,7 @@
 		예시)
 		alivetime = 0; //NFC_ACTIVE_UNLIMITED_ALIVE_TIME
 		alivetime = -1; //NFC_ACTIVE_APPLICATION_ALIVE_TIME
-		alivetime = 60; //NFC_ACTIVE_MAX_ALIVE_TIME
+		alivetime = 60; //NFC_ACTIVE_MAX_ALIVE_TIME (  20 <= alivetime <= 60 )
 			
  **param**
  
@@ -368,12 +368,62 @@
 		 // NFC APDU 명령어 처리기
 		 DccApduManager apduManager;
 
- - 
-	 
-	
-		내용
+### Example Code
+        
+        //Start Service DccHostApudService and NFC Handler Instance
+        apduManager = DccApduManager.getInstance(MainActivity.this, ReaderModel.TMR300);
 
+        // SET LABEL
+        apduManager.setApplicationLabel("TMOBILEPASS_CARD");
+        
+        // NFC Event Hanlder
+        apduManager.setDccApduManagerHandler(mConnectionHandler);
 
+        // Token Set and Start CardService
+        // iTimeout = UNLIMITED_ALIVE_TIME 로 설정되면
+        // NFC 서비스에 토큰이 계속해서 로딩되어 프로그램이 종료 되었거나
+        // 핸드폰이 재시작 되었어도 계속해서 토큰 서비스를 제공함.
+        // iTimeout 값을 20 이상 , 60 이하의 값으로 지정하면 지정된 시간동안에만 토큰 서비스를 제공함. ( 보안을 높이기 위함 )
+        // Option 값은 리더기에 해당 옵션 값을 전달한다. ( Application Active 중일 때에만 유지 되는 값으로 프로그램이 종료 되면 유효하지 않다. )
+        try {
+            apduManager.setCryptoToken(sTokenValue, (byte) 0x80, iTimeout, false);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        [NFC 옵션 기능]
+        1)  등록한 토큰을 활성화 한다.  토큰을 등록하면 자동으로 활성화 되므로 활성화 API 를 별도 호출하지 않음
+        apduManager.activeCryptoTocken();
+        
+        2)  등록한 토큰을 비활성화 한다. 즉 토큰이 제출되지 않는다.
+        apduManager.pauseCryptoTocken();
+        
+        3)  등록된 토큰을 비활성화 하고 삭제 한다.. 토큰이 제출되지 않는다.
+        apduManager.setClearCryptoToken();
+
+        4)  IDccConnectionHandler Interface위 구현
+
+        @Override
+        public boolean onGetTerminalId(String sTernimalId) {
+            Log.i("DCCSDK" ,"DCCSDK onGetTockenCompleted sTerminalId=" + sTernimalId);
+            return true;
+        }
+	        @Override
+        public void onGetTockenCompleted(boolean result) {
+            if( result )
+                Log.i("DCCSDK" ,"DCCSDK onGetTockenCompleted SUCCESS");
+            else
+                Log.i("DCCSDK" ,"DCCSDK onGetTockenCompleted FAILURE");
+
+            Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            // 1초 진동
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+            } else {
+                vibrator.vibrate(500);
+            }
+            mbuttonNfcScan.setEnabled(true);
+        }
 
 
 -------------------------------------------------------------------------------------------------------------------
