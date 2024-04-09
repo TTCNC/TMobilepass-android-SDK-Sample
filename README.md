@@ -94,25 +94,18 @@
 			alivetime = 0; //NFC_ACTIVE_UNLIMITED_ALIVE_TIME
 			alivetime = -1; //NFC_ACTIVE_APPLICATION_ALIVE_TIME
 			alivetime = 60; //NFC_ACTIVE_MAX_ALIVE_TIME
-
  ##### param 
 		String sTokenValue : 토큰 값
-
 		byte option : 옵션 데이터
-
 		int alivetime : 토큰값의 유효 시간
-
 		boolean isEncrypted : 토큰값의 암호화 여부 (true: 이미 암호화 된 토큰값 , false: 평문으로 된 토큰값)
- 
  ##### retval
 		none
-
 
 ### activeCryptoToken()
 
  ##### brief
 		
-
  ##### param 
 		none
  
