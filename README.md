@@ -10,7 +10,6 @@
 
  리더기 : TMR300 ( 암호화 , 평문 지원 ) , CCAL100TX ( 암호화 , 평문 지원 ) ,  NC400/TMPP ( 평문지원 ) , NC900
 
--------------------------------------------------------------------------------------------------------------------
 
 ## 2. 기능 개요
 
@@ -25,7 +24,6 @@
  - [ ]  안드로이드 BLE 기능을 제공하고 있으며 , 단말기의 성능에 따라서 30미리 ~ 100미리 범위에서 인식함.
  - [ ]  TDES방식의 암복호화 방식을 사용하고 있으며 3-Pass Authentication Process  로직을 적용하여 보안성이 높음
  
--------------------------------------------------------------------------------------------------------------------
  
 ## 4. Features offered
 
@@ -81,35 +79,35 @@
  -  [ ] setManagementMode() // 설정모드
  -  [ ] getMode()  // 현재 모드
  
--------------------------------------------------------------------------------------------------------------------
+ 
  
 ## 5. Functions
 
 ### setCryptoToken(String sTokenValue, byte option, int alivetime, boolean isEncrypted)
 
-	 *brief*
+	**brief**
      토큰값을 적재한다. 안드로이드는 alivetime 옵션에 따라 토큰값의 유효 시간을 세 가지 모드 중 선택하여 사용할 수 있다. 
 		예시)
 			alivetime = 0; //NFC_ACTIVE_UNLIMITED_ALIVE_TIME
 			alivetime = -1; //NFC_ACTIVE_APPLICATION_ALIVE_TIME
 			alivetime = 60; //NFC_ACTIVE_MAX_ALIVE_TIME
-	 __param__
+	**param**
 			String sTokenValue : 토큰 값
 			byte option : 옵션 데이터
 			int alivetime : 토큰값의 유효 시간
 			boolean isEncrypted : 토큰값의 암호화 여부 (true: 이미 암호화 된 토큰값 , false: 평문으로 된 토큰값)
-	 __retval__
+	**retval**
 			none
 			
 ### activeCryptoToken()
 
-	 **brief**
+	**brief**
 		none
 		
-	 **param**
+	**param**
 		none
  
-	 **retval**
+	**retval**
 		none
 
 -------------------------------------------------------------------------------------------------------------------
