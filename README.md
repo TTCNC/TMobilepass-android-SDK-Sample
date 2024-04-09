@@ -229,8 +229,8 @@
 ### setCryptoToken(String sTokenValue, byte option, int alivetime, boolean isEncrypted)
 
  **brief**
-    토큰을 암호화 한 후 설정한다.
-	토큰값을 적재한다. 안드로이드는 alivetime 옵션에 따라 토큰값의 유효 시간을 세 가지 모드 중 선택하여 사용할 수 있다. 
+        토큰을 암호화 한 후 설정한다.
+	    토큰값을 적재한다. 안드로이드는 alivetime 옵션에 따라 토큰값의 유효 시간을 세 가지 모드 중 선택하여 사용할 수 있다. 
 		예시)
 		alivetime = 0; //NFC_ACTIVE_UNLIMITED_ALIVE_TIME
 		alivetime = -1; //NFC_ACTIVE_APPLICATION_ALIVE_TIME
