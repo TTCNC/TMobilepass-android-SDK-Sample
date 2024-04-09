@@ -125,6 +125,7 @@
 ### NFC SDK 사전 작업
 
  - 라이브러리 .aar 파일을 프로젝트 파일의 라이브러리 경로에 넣고, build.gradle의 dependencies에 추가합니다.
+ 
 		dependencies {
 			 implementation fileTree(include: ['*.aar'], dir: 'libs')
 			 // TMobilePass Library Load
@@ -132,6 +133,7 @@
 		}
 
  - AndroidManifest.xml 에 아래와 같은 permission을 추가합니다.
+ 
 	 // FOR USE NFC
      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -141,6 +143,7 @@
 	 	 
 
  - 프로젝트에 아래와 같이 import를 추가합니다.
+ 
 	 import android.nfc.NfcAdapter;
 	 
 	 import kr.co.ttcnc.ucsdk.dccctrllib.nfc.DccApduManager;
@@ -148,6 +151,7 @@
 	 import kr.co.ttcnc.ucsdk.dccctrllib.nfc.ReaderModel;
 	 
  - Activity 함수에 NFC APDU 명령어 처리기를 추가합니다.
+ 
 	 // NFC APDU 명령어 처리기
 	 DccApduManager apduManager;
 
