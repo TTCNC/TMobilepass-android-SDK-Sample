@@ -2,34 +2,34 @@
 
 
 ## 1. 개발 및 지원 환경
-Android Studio version : Giraffe(2022.3.1 Patch 3)
+ Android Studio version : Giraffe(2022.3.1 Patch 3)
 
-Android : 5.0 ( minSDK : 23 / targetSDK : 33 )
+ Android : 5.0 ( minSDK : 23 / targetSDK : 33 )
 
-라이브러리 파일명 : tmobilepasslib-v1.08-20240409.aar
+ 라이브러리 파일명 : tmobilepasslib-v1.08-20240409.aar
 
-리더기 : TMR300 ( 암호화 , 평문 지원 ) , CCAL100TX ( 암호화 , 평문 지원 ) ,  NC400/TMPP ( 평문지원 ) , NC900
+ 리더기 : TMR300 ( 암호화 , 평문 지원 ) , CCAL100TX ( 암호화 , 평문 지원 ) ,  NC400/TMPP ( 평문지원 ) , NC900
 
 -------------------------------------------------------------------------------------------------------------------
 
 ## 2. 기능 개요
 
-### NFC
-- [ ]  안드로이드 NFC 기능을 지원하고 있는  단말기
-- [ ]  HCE 기능을 제공하고 있기 때문에 NFC CARD MODE 로 동작하는 것을 추천함.
-- [ ]  NFC 인식 범위 : 스마트폰의 안테나를 TMobilepass  리더기 안테나 상단에 터치 하면 동작하며 인식거리는 20 미리 이상 , 평균 35 미리 성능
-- [ ]  AES256 GCM 방식의 암복호화 방식을 사용하고 있으며 3-Pass Authentication Process  로직을 적용하여 보안성이 높음
+ ### NFC
+ - [ ]  안드로이드 NFC 기능을 지원하고 있는  단말기
+ - [ ]  HCE 기능을 제공하고 있기 때문에 NFC CARD MODE 로 동작하는 것을 추천함.
+ - [ ]  NFC 인식 범위 : 스마트폰의 안테나를 TMobilepass  리더기 안테나 상단에 터치 하면 동작하며 인식거리는 20 미리 이상 , 평균 35 미리 성능
+ - [ ]  AES256 GCM 방식의 암복호화 방식을 사용하고 있으며 3-Pass Authentication Process  로직을 적용하여 보안성이 높음
 
-### BLE
-- [ ]  안드로이드 BLE 기능을 지원하고 있는 지원환경 범위 이상의 단말기
-- [ ]  안드로이드 BLE 기능을 제공하고 있으며 , 단말기의 성능에 따라서 30미리 ~ 100미리 범위에서 인식함.
-- [ ]  TDES방식의 암복호화 방식을 사용하고 있으며 3-Pass Authentication Process  로직을 적용하여 보안성이 높음
+ ### BLE
+ - [ ]  안드로이드 BLE 기능을 지원하고 있는 지원환경 범위 이상의 단말기
+ - [ ]  안드로이드 BLE 기능을 제공하고 있으며 , 단말기의 성능에 따라서 30미리 ~ 100미리 범위에서 인식함.
+ - [ ]  TDES방식의 암복호화 방식을 사용하고 있으며 3-Pass Authentication Process  로직을 적용하여 보안성이 높음
  
 -------------------------------------------------------------------------------------------------------------------
  
 ## 4. Features offered
 
-### 1) 크리덴셜 암호화 데이타 전송 
+ ### 1) 크리덴셜 암호화 데이타 전송 
  - [ ]  AES256/GCM , CBC 암복호화 알고리즘 지원
  - [ ]  16 Byte 크리덴셜 데이타 지원
  - [ ]  3-Pass Authentication 알고리즘 지원
@@ -38,45 +38,45 @@ Android : 5.0 ( minSDK : 23 / targetSDK : 33 )
  - pauseCryptoTocken
  - setClearCryptoToken
 
-### 2) 크리덴셜 평문 데이타 전송
+ ### 2) 크리덴셜 평문 데이타 전송
  - [ ]  256 Byte 데이타 전송
  - setTocken
  - activeTocken
  - pauseTocken 
  - setClearToken
 
-### 3) 안드로이드 NFC 에 크리덴셜 키를 등록 하여 사용하는 Always-On 기능
+ ### 3) 안드로이드 NFC 에 크리덴셜 키를 등록 하여 사용하는 Always-On 기능
 
-### 4) (v1.08)크리덴셜 + option 설정을 통한 서비스 구분 기능 제공.
+ ### 4) (v1.08)크리덴셜 + option 설정을 통한 서비스 구분 기능 제공.
  - [ ]  크리덴셜 키를 등록하면 , 어플이 종료 되거나 스마트폰이 리부팅 되어도 등록된 크리덴셜 키를 계속 서비스 하는 기능 제공
  - setCryptoTocken(sTokenValue,option,alivetime,isEncrypted); // alivetime = 0; ( UNLIMITED_ALIVE_TIME )
  - setCryptoTocken(sTokenValue,alivetime,isEncrypted); // alivetime = 0; ( UNLIMITED_ALIVE_TIME )
 
-### 5) 어플리케이션 NFC 에 크리덴셜 키를 등록 하여 사용하는 어플리케이션이 살아 있는 동안기능 제공
+ ### 5) 어플리케이션 NFC 에 크리덴셜 키를 등록 하여 사용하는 어플리케이션이 살아 있는 동안기능 제공
  - [ ]  크리덴셜 키를 등록하면 , 어플이 종료 되기 전까지 크리덴셜 키를 계속 서비스 제공
 
-### 6) 안드로이드 NFC 에 AID 등록하고 제거 기능을 제공하는 Security-On 기능 제공
+ ### 6) 안드로이드 NFC 에 AID 등록하고 제거 기능을 제공하는 Security-On 기능 제공
  - [ ]  20 ~ 60 초 사이의 시간에 NFC AID 와 크리덴셜 키 값을 활성화 하여 서비스 제공
  - [ ]  서비스 제공 시간 이외에는 해당 AID 서비스가 스마트폰에서는 노출되지 않음
  - setCryptoTocken(sTokenValue,alivetime,isEncrypted); // alivetime = MAX_ALIVE_TIME; (  20 <= iTimeout <= 60 )
 
-### 7) 서버와의 통신 체널에도 암호화 데이타 서비스 제공
+ ### 7) 서버와의 통신 체널에도 암호화 데이타 서비스 제공
  - [ ]  getServerAes256Cbc() 해당 암호화 로직을 서버에서 구현하여 적용
  - [ ]  서버 암복호화 모듈에 getServerAes256Cbc() 함수에 해당하는 Java Native API ( JNI ) 로 구현된 로직 사용
  
-### 8) NFC 크리덴셜 키 중지 서비스 제공
+ ### 8) NFC 크리덴셜 키 중지 서비스 제공
  -  [ ] 특정 단말기의 상태에 따라서  크리덴셜 서비스 중지 기능 제공
  -  [ ] onGetTerminalId(String sTernimalId) sTerminalId 값을 판단할 수 있으며 조건에 따라 리턴값으로 서비스를 종료 할 수 있음.
     = sTerminalId 값은 "," 로 단말기의 TID , 현재 리더기의 시간 "YYYY-MM-DD HH:MI:SS" , 정상/오류 메시지 로 구성된다.
  -  [ ] onGetTerminalId 리턴 값이 true 이면 서비스 계속 , false 이면 서비스 정지
  
-### 9) 리더기 지정 기능
+ ### 9) 리더기 지정 기능
  -  [ ] 사용하려고 하는 리더기의 모델명칭을 지정한다.
  -  [ ] apduManager = DccApduManager.getInstance(FullscreenMainActivity.this,  ReaderModel );
  -  [ ] ReaderModel.NC400LST 또는 ReaderModel.CCAL100TX  또는 ReaderModel.TMR300
  -  [ ] 단말기 지정이 잘못 된 경우 기능 동작이 정상적으로 되지 않음
  
-### 10) Management Mode
+ ### 10) Management Mode
  -  [ ] setNormalMode()  // 운영모드
  -  [ ] setManagementMode() // 설정모드
  -  [ ] getMode()  // 현재 모드
