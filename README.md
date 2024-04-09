@@ -47,24 +47,24 @@
 
  ### 3) 안드로이드 NFC 에 크리덴셜 키를 등록 하여 사용하는 Always-On 기능
 
- ### 4) (v1.08)크리덴셜 + option 설정을 통한 서비스 구분 기능 제공.
+ ### 4) (v1.08)크리덴셜 + option 설정을 통한 서비스 구분 기능
  - [ ]  크리덴셜 키를 등록하면 , 어플이 종료 되거나 스마트폰이 리부팅 되어도 등록된 크리덴셜 키를 계속 서비스 하는 기능 제공
  - setCryptoTocken(sTokenValue,option,alivetime,isEncrypted); // alivetime = 0; ( UNLIMITED_ALIVE_TIME )
  - setCryptoTocken(sTokenValue,alivetime,isEncrypted); // alivetime = 0; ( UNLIMITED_ALIVE_TIME )
 
- ### 5) 어플리케이션 NFC 에 크리덴셜 키를 등록 하여 사용하는 어플리케이션이 살아 있는 동안기능 제공
+ ### 5) 어플리케이션 NFC 에 크리덴셜 키를 등록 하여 사용하는 어플리케이션이 살아 있는 동안 기능
  - [ ]  크리덴셜 키를 등록하면 , 어플이 종료 되기 전까지 크리덴셜 키를 계속 서비스 제공
 
- ### 6) 안드로이드 NFC 에 AID 등록하고 제거 기능을 제공하는 Security-On 기능 제공
+ ### 6) 안드로이드 NFC 에 AID 등록하고 제거 기능을 제공하는 Security-On 기능
  - [ ]  20 ~ 60 초 사이의 시간에 NFC AID 와 크리덴셜 키 값을 활성화 하여 서비스 제공
  - [ ]  서비스 제공 시간 이외에는 해당 AID 서비스가 스마트폰에서는 노출되지 않음
  - setCryptoTocken(sTokenValue,alivetime,isEncrypted); // alivetime = MAX_ALIVE_TIME; (  20 <= iTimeout <= 60 )
 
- ### 7) 서버와의 통신 체널에도 암호화 데이타 서비스 제공
+ ### 7) 서버와의 통신 체널에도 암호화 데이타 서비스
  - [ ]  getServerAes256Cbc() 해당 암호화 로직을 서버에서 구현하여 적용
  - [ ]  서버 암복호화 모듈에 getServerAes256Cbc() 함수에 해당하는 Java Native API ( JNI ) 로 구현된 로직 사용
  
- ### 8) NFC 크리덴셜 키 중지 서비스 제공
+ ### 8) NFC 크리덴셜 키 중지 서비스
  -  [ ] 특정 단말기의 상태에 따라서  크리덴셜 서비스 중지 기능 제공
  -  [ ] onGetTerminalId(String sTernimalId) sTerminalId 값을 판단할 수 있으며 조건에 따라 리턴값으로 서비스를 종료 할 수 있음.
     = sTerminalId 값은 "," 로 단말기의 TID , 현재 리더기의 시간 "YYYY-MM-DD HH:MI:SS" , 정상/오류 메시지 로 구성된다.
@@ -85,37 +85,73 @@
  
 ## 5. Functions
 
-### setCryptoTocken
+### setCryptoToken(String sTokenValue, byte option, int alivetime, boolean isEncrypted)
 
- -sTokenValue:
+ -brief
+		토큰값을 적재한다. 안드로이드는 alivetime 옵션에 따라 토큰값의 유효 시간을 세 가지 모드 중 선택하여 사용할 수 있다. 
+		예시)
+			alivetime = 0; //NFC_ACTIVE_UNLIMITED_ALIVE_TIME
+			alivetime = -1; //NFC_ACTIVE_APPLICATION_ALIVE_TIME
+			alivetime = 60; //NFC_ACTIVE_MAX_ALIVE_TIME
 
- -option:
+ -param 
+		sTokenValue : 토큰 값
 
- -alivetime:
+		option : 옵션 데이터
 
- -isEncrypted:
+		alivetime : 토큰값의 유효 시간
 
-
-		내용
-
-### activeCryptoTocken
-
- -sTokenValue:
-
- -option:
-
- -alivetime:
-
- -isEncrypted:
+		isEncrypted : 토큰값의 암호화 여부 (true: 이미 암호화 된 토큰값 , false: 평문으로 된 토큰값)
+ 
+ -retval : none
 
 
-		내용
+### activeCryptoToken()
+
+ -brief
+		
+
+ -param 
+		none
+ 
+ -retval
+		none
 
 -------------------------------------------------------------------------------------------------------------------
 
 ## 6. Example
 
- - 설명
+### NFC SDK 사전 작업
+
+ - 라이브러리 .aar 파일을 프로젝트 파일의 라이브러리 경로에 넣고, build.gradle의 dependencies에 추가합니다.
+		dependencies {
+			 implementation fileTree(include: ['*.aar'], dir: 'libs')
+			 // TMobilePass Library Load
+			 implementation files('libs/tmobilepasslib-v1.08-20240409.aar')
+		}
+
+ - AndroidManifest.xml 에 아래와 같은 permission을 추가합니다.
+	 // FOR USE NFC
+     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+     // FOR SAMPLE APPLICATION VIBRATION
+     <uses-permission android:name="android.permission.VIBRATE"/>
+	 	 
+
+ - 프로젝트에 아래와 같이 import를 추가합니다.
+	 import android.nfc.NfcAdapter;
+	 
+	 import kr.co.ttcnc.ucsdk.dccctrllib.nfc.DccApduManager;
+	 import kr.co.ttcnc.ucsdk.dccctrllib.nfc.IDccConnectionHandler;
+	 import kr.co.ttcnc.ucsdk.dccctrllib.nfc.ReaderModel;
+	 
+ - Activity 함수에 NFC APDU 명령어 처리기를 추가합니다.
+	 // NFC APDU 명령어 처리기
+	 DccApduManager apduManager;
+
+ - 
+	 
 	
 		내용
 
@@ -127,20 +163,9 @@
 
 
      [NFC SDK 사전 작업]
-     // TMobilePass Library Load
-     implementation files('libs/tmobilepasslib-v1.08-20210610.aar')
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-feature android:name="android.hardware.bluetooth_le"  android:required="true" />
-
-    // FOR SAMPLE APPLICATION VIBRATION
-    <uses-permission android:name="android.permission.VIBRATE"/>
 
      [NFC SDK 제공 함수]
-     /** NFC APDU 명령어 처리기 */
-     DccApduManager apduManager;
-
      
      /*
      * Start Service DccHostApudService and
@@ -148,8 +173,11 @@
      */
      apduManager = DccApduManager.getInstance(FullscreenMainActivity.this , ReaderModel.TMR300);
 
+	 // SET LABEL
+     apduManager.setApplicationLabel("TMOBILEPASS_CARD");
+	 
      // NFC Event Hanlder
-     apduManager.setDccApduManagerHandler(FullscreenMainActivity.this, mConnectionHandler);
+     apduManager.setDccApduManagerHandler(mConnectionHandler);
 
      // Encryped Token
      TokenEncryped = apduManager.getServerAes256Cbc(hexStringFromByteArray(sTokenValue.getBytes()).getBytes());
