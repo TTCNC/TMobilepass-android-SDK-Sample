@@ -1,6 +1,6 @@
 # TMobilepass Android SDK
 
-## 1.개발 및 지원 환경
+## 1. 개발 및 지원 환경
 Android Studio version : Giraffe(2022.3.1 Patch 3)
 
 Android : 5.0 ( minSDK : 23 / targetSDK : 33 )
@@ -9,18 +9,18 @@ Android : 5.0 ( minSDK : 23 / targetSDK : 33 )
 
 리더기 : TMR300 ( 암호화 , 평문 지원 ) , CCAL100TX ( 암호화 , 평문 지원 ) ,  NC400/TMPP ( 평문지원 ) , NC900
 
-## 2.NFC 기능 개요
+## 2. NFC 기능 개요
 - [ ]  안드로이드 NFC 기능을 지원하고 있는  단말기
 - [ ]  HCE 기능을 제공하고 있기 때문에 NFC CARD MODE 로 동작하는 것을 추천함.
 - [ ]  NFC 인식 범위 : 스마트폰의 안테나를 TMobilepass  리더기 안테나 상단에 터치 하면 동작하며 인식거리는 20 미리 이상 , 평균 35 미리 성능
 - [ ]  AES256 GCM 방식의 암복호화 방식을 사용하고 있으며 3-Pass Authentication Process  로직을 적용하여 보안성이 높음
 
-## 3.BLE 기능 개요
+## 3. BLE 기능 개요
 - [ ]  안드로이드 BLE 기능을 지원하고 있는 지원환경 범위 이상의 단말기
 - [ ]  안드로이드 BLE 기능을 제공하고 있으며 , 단말기의 성능에 따라서 30미리 ~ 100미리 범위에서 인식함.
 - [ ]  TDES방식의 암복호화 방식을 사용하고 있으며 3-Pass Authentication Process  로직을 적용하여 보안성이 높음
  
-## 4.Features offered
+## 4. Features offered
 
 ### 1) 크리덴셜 암호화 데이타 전송 
 - [ ]  AES256/GCM , CBC 암복호화 알고리즘 지원
@@ -46,36 +46,36 @@ Android : 5.0 ( minSDK : 23 / targetSDK : 33 )
 - [ ]  20 ~ 60 초 사이의 시간에 NFC AID 와 크리덴셜 키 값을 활성화 하여 서비스 제공
 - [ ]  서비스 제공 시간 이외에는 해당 AID 서비스가 스마트폰에서는 노출되지 않음
  
-## 5.Functions
+## 5. Functions
 
 ### setCryptoTocken
 
-	-sTokenValue:
+ -sTokenValue:
 
-	-option:
+ -option:
 
-	-alivetime:
+ -alivetime:
 
-	-isEncrypted:
+ -isEncrypted:
 
 
 		내용
 
 ### activeCryptoTocken
 
-	-sTokenValue:
+ -sTokenValue:
 
-	-option:
+ -option:
 
-	-alivetime:
+ -alivetime:
 
-	-isEncrypted:
+ -isEncrypted:
 
 
 		내용
 
 
-## 6.Example
+## 6. Example
 
 	- 설명
 	
