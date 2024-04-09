@@ -390,8 +390,12 @@
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        
+        //등록한 토큰을 활성화
+        apduManager.activeCryptoTocken();
 
-        [NFC 옵션 기능]
+
+### Example Code
         1)  등록한 토큰을 활성화 한다.  토큰을 등록하면 자동으로 활성화 되므로 활성화 API 를 별도 호출하지 않음
         apduManager.activeCryptoTocken();
         
@@ -403,6 +407,8 @@
 
         4)  IDccConnectionHandler Interface위 구현
 
+        //onGetTerminalId() 함수의 리턴값은 true 로 해야 NFC 통신으로 데이터가 전송됨.
+        //리턴값을 false 로 하면 NFC 통신을 중단하고 FAILURE로 종료됨
         @Override
         public boolean onGetTerminalId(String sTernimalId) {
             Log.i("DCCSDK" ,"DCCSDK onGetTockenCompleted sTerminalId=" + sTernimalId);
