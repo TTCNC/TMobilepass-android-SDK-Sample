@@ -9,8 +9,6 @@ Android : 5.0 ( minSDK : 23 / targetSDK : 33 )
 
 리더기 : TMR300 ( 암호화 , 평문 지원 ) , CCAL100TX ( 암호화 , 평문 지원 ) ,  NC400/TMPP ( 평문지원 ) , NC900
 
-## 지원 내용
-
 ## NFC 기능 개요
 - [ ]  안드로이드 NFC 기능을 지원하고 있는  단말기
 - [ ]  HCE 기능을 제공하고 있기 때문에 NFC CARD MODE 로 동작하는 것을 추천함.
