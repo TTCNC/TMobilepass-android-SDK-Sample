@@ -87,10 +87,149 @@
  
 ## 5. Functions
 
-### setCryptoToken(String sTokenValue, byte option, int alivetime, boolean isEncrypted)
+### getInstance()
 
  **brief**
  
+		DccApduManager 인스턴스를 반환한다. 인스턴스가 null 일 경우 새로 생성하지 않는다.
+		
+ **param**
+ 
+		none
+ 
+ **retval**
+ 
+		DccApduManager 인스턴스
+
+### getInstance(Context context, ReaderModel readerModel)
+
+ **brief**
+ 
+		DccApduManager 싱글턴 인스턴스를 반환한다.
+		
+ **param**
+ 
+		context : context
+        readerModel : 사용할 리더기 모델 ( 예)ReaderModel.TMR300 )
+
+ **retval**
+ 
+		DccApduManager 인스턴스
+
+
+### getLibVersion()
+
+ **brief**
+
+        SDK의 정보를 반환한다.
+
+ **retval**
+
+        SDK 정보 문자열
+
+
+### setDccApduManagerHandler(IDccConnectionHandler connectionHandler)
+
+ **brief**
+
+        DccApduManager Handler is needed for onResult
+
+ **param**
+
+        connectionHandler : connectionHandler
+        
+ **retval**
+ 
+		none
+
+### setApplicationLabel(String applicationLabel)
+
+ **brief**
+
+        어플리케이션 레이블을 설정한다.
+
+ **param**
+
+        applicationLabel : 설정하고자 하는 어플리케이션 레이블
+        
+ **retval**
+ 
+		none
+
+### setAID(String hex)
+
+ **brief**
+
+        어플리케이션 AID를 설정한다. AID는 리더기에서 지원하는 AID와 동일해야 한다.
+
+ **param**
+
+        hex : 어플리케이션 아이디(바이트 배열)으로 전환하고자 하는 16진수 문자열
+        
+ **retval**
+ 
+		none
+
+### setManagementMode()
+
+ **brief**
+
+        관리 모드로 설정한다.
+
+ **param**
+
+        none
+        
+ **retval**
+ 
+		none
+
+### setNormalMode()
+
+ **brief**
+
+        기본 모드로 설정한다.
+
+ **param**
+
+        none
+        
+ **retval**
+ 
+		none
+
+### getMode()
+
+ **brief**
+
+        설정된 모드를 반환한다.
+
+ **param**
+
+        none
+        
+ **retval**
+ 
+		String 으로 반환. "00" : 기본모드 , "F0" : 관리모드
+
+### setSound(int iSoundMode)
+
+ **brief**
+
+        사운드 모드를 세팅한다.
+
+ **param**
+
+        iSoundMode : 설정 할 사운드 모드
+        
+ **retval**
+ 
+		none
+
+### setCryptoToken(String sTokenValue, byte option, int alivetime, boolean isEncrypted)
+
+ **brief**
+    토큰을 암호화 한 후 설정한다.
 	토큰값을 적재한다. 안드로이드는 alivetime 옵션에 따라 토큰값의 유효 시간을 세 가지 모드 중 선택하여 사용할 수 있다. 
 		예시)
 		alivetime = 0; //NFC_ACTIVE_UNLIMITED_ALIVE_TIME
@@ -101,18 +240,19 @@
  
 		String sTokenValue : 토큰 값
 		byte option : 옵션 데이터
-		int alivetime : 토큰값의 유효 시간
+		int alivetime : 토큰값의 유효 시간 설정
 		boolean isEncrypted : 토큰값의 암호화 여부 (true: 이미 암호화 된 토큰값 , false: 평문으로 된 토큰값)
 			
- **retval**
- 
-		none
+ **throws**
+
+        Exception
+    
 			
 ### activeCryptoToken()
 
  **brief**
  
-		none
+		토큰을 활성상태로 설정한다.
 		
  **param**
  
@@ -122,7 +262,75 @@
  
 		none
 
--------------------------------------------------------------------------------------------------------------------
+### pauseCryptoToken()
+
+ **brief**
+ 
+		토큰을 일시정지상태로 설정한다.
+		
+ **param**
+ 
+		none
+ 
+ **retval**
+ 
+		none
+
+### pauseCryptoToken()
+
+ **brief**
+ 
+		설정된 토큰을 지운다.
+		
+ **param**
+ 
+		none
+ 
+ **retval**
+ 
+		none
+
+### onStartCommand()
+
+ **brief**
+ 
+		HCE onStartCommand
+		
+ **param**
+ 
+		none
+ 
+ **retval**
+ 
+		none
+
+### onDeactivated()
+
+ **brief**
+ 
+		HCE onDeactivated
+		
+ **param**
+ 
+		none
+ 
+ **retval**
+ 
+		none
+
+### processApdu(byte[] commandApdu)
+
+ **brief**
+ 
+		APDU 처리 함수
+		
+ **param**
+ 
+		commandApdu : 처리해야할 데이터
+ 
+ **retval**
+ 
+		none
 
 ## 6. Example
 
