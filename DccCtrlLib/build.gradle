@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 33
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+    externalNativeBuild {
+        ndkBuild {
+            path file('src/main/java/kr/co/ttcnc/ucsdk/dccctrllib/jni/Android.mk')
+        }
+    }
+
+    packagingOptions {
+        exclude 'lib/x86_64/darwin/libscrypt.dylib'
+        exclude 'lib/x86_64/freebsd/libscrypt.so'
+        exclude 'lib/x86_64/linux/libscrypt.so'
+    }
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
+            universalApk false
+        }
+    }
+    dexOptions{
+        javaMaxHeapSize "4g"
+    }
+    ndkVersion '22.1.7171670'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    namespace 'kr.co.ttcnc.ucsdk.dccctrllib'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+}
+
+// This is the actual solution, as in http://stackoverflow.com/a/19037807/1002054
+task deleteJar(type: Delete) {
+}
+
+task createJar(type: Copy) {
+    from('build/outputs/aar/')
+    from('jniLibs/')
+    into('libs/')
+    include('DccCtrlLib-release.aar')
+    rename ('DccCtrlLib-release.aar', 'tmobilepasslib-v1.08-20240409.aar')
+}
+
+createJar.dependsOn(deleteJar, build)

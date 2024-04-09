@@ -1,0 +1,9 @@
+.idea/
+.gradle/
+build/intermediates/
+DccCtrlLib/.cxx/ndk_locator_record_5m4x5gj2.json
+DccCtrlLib/.cxx/
+app/build/intermediates/
+app/build/tmp/
+app/build/outputs/logs/manifest-merger-debug-report.txt
+app/build/outputs/apk/debug/app-debug.apk

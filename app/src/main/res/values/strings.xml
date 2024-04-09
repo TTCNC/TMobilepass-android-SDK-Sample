@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TimoPass</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="ble_not_supported">ble_not_supported！</string>
+    <string name="device_address">MAC_ADDRESS :   </string>
+</resources>

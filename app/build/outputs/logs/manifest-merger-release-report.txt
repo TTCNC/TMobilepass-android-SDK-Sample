@@ -1,0 +1,265 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:2:1-41:12
+INJECTED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:2:1-41:12
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:2:1-44:12
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\a99db2a38e35dae396e5a1da642d0594\transformed\material-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\0c0bde0817caf2f1c28ea88afbbe4f4b\transformed\appcompat-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\mjkim\.gradle\caches\transforms-3\82fda4887cfeee16d1c78dde220aa16c\transformed\constraintlayout-1.1.3\AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\d16dc1364497823f5aae30a04d57f4a8\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\9b260396306f2b740b0d919fc8a94e9d\transformed\fragment-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\964c38fcc14ce2716e4dc3077fa5781b\transformed\vectordrawable-animated-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\3805fa1719f11658f83bb2113b6c2f58\transformed\recyclerview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\3d320ac7c682e9c6673cf1cdf57b5fec\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\6599d443ec9fcad2fe1ecf661bc29826\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\e922c11961eb2a543bc3c6998851bbab\transformed\vectordrawable-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\c98f2aa004206e7ab7ee4ab9940976f2\transformed\transition-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\c899839ac7c9a6e56f43a8e981b56837\transformed\media-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\72ac7939cfac6baaf3ca938ea0e25983\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\0f3122d9d2e5e8dc23576e8fe6033800\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\e6118a98c3dca7dda1d6212c3e4691b3\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\9853aee1f7496b00da3a1e7e03db31c3\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\dcc8beb9f2c494ae723dfd28071e5f75\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\3ec8c36bdcb6d9403af1451c6cbbbdc9\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\1bdaded5dc27734a14ead6f4714c9a16\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\00e770c4d3af567ad5466675c647124f\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\e4e695403a4b1dfe269c1898bc0a3d41\transformed\core-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\1484c8678257d93d8dfc87c9cb1e1687\transformed\versionedparcelable-1.0.0\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\78617eef17cb8d930b0d3c4952977d61\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\022316015dcc5b40cdeec3a9553a09b8\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\ec7ae35cd5cdeedfeab623ff3eb8a023\transformed\lifecycle-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\33f9ae11ef56155b3b2832fb42f4eaf0\transformed\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\3d59831955753d61d5825790ec111d5d\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\fbdb7653fe9386c61e41e900aed73803\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\1a353f27bb2742272bd2d466733e885f\transformed\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\ad279b5b1283f10e8f1680c3c041704b\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\12da910a578e381d4aa9b9bf4d7c3da0\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\910aaa30dece4ed29046180756d12f43\transformed\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\f103b902654e0b9db37925453467346f\transformed\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
+	package
+		INJECTED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.BLUETOOTH_CONNECT
+ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:5:5-76
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:12:5-76
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:12:5-76
+	android:name
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:5:22-73
+uses-permission#android.permission.INTERNET
+ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:6:5-67
+	android:name
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:6:22-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:7:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:8:22-78
+uses-permission#android.permission.VIBRATE
+ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:9:5-65
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:13:5-66
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:13:5-66
+	android:name
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:9:22-63
+uses-permission#android.permission.BLUETOOTH
+ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:10:5-68
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:9:5-68
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:9:5-68
+	android:name
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:10:22-65
+uses-permission#android.permission.BLUETOOTH_SCAN
+ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:11:5-72
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:11:5-73
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:11:5-73
+	android:name
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:11:22-70
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:13:5-74
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:10:5-74
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:10:5-74
+	android:name
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:13:22-71
+application
+ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:17:5-39:19
+INJECTED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:17:5-39:19
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:25:5-42:19
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:25:5-42:19
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\a99db2a38e35dae396e5a1da642d0594\transformed\material-1.0.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\a99db2a38e35dae396e5a1da642d0594\transformed\material-1.0.0\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\mjkim\.gradle\caches\transforms-3\82fda4887cfeee16d1c78dde220aa16c\transformed\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\mjkim\.gradle\caches\transforms-3\82fda4887cfeee16d1c78dde220aa16c\transformed\constraintlayout-1.1.3\AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\e4e695403a4b1dfe269c1898bc0a3d41\transformed\core-1.0.0\AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\e4e695403a4b1dfe269c1898bc0a3d41\transformed\core-1.0.0\AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\1484c8678257d93d8dfc87c9cb1e1687\transformed\versionedparcelable-1.0.0\AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\1484c8678257d93d8dfc87c9cb1e1687\transformed\versionedparcelable-1.0.0\AndroidManifest.xml:22:5-23:19
+	android:extractNativeLibs
+		INJECTED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\e4e695403a4b1dfe269c1898bc0a3d41\transformed\core-1.0.0\AndroidManifest.xml:22:18-86
+	android:supportsRtl
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:23:9-35
+	android:label
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:20:9-41
+	android:roundIcon
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:22:9-61
+	android:largeHeap
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:21:9-33
+	android:icon
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:19:9-56
+	android:allowBackup
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:18:9-35
+	android:theme
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:24:9-40
+activity#kr.co.ttcnc.ucsdk.timopass.MainActivity
+ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:25:9-37:20
+	android:screenOrientation
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:29:13-50
+	android:label
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:28:13-45
+	android:exported
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:31:13-36
+	android:configChanges
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:27:13-74
+	android:theme
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:30:13-51
+	android:name
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:26:13-67
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:32:13-36:29
+action#android.intent.action.MAIN
+ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:33:17-69
+	android:name
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:33:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:35:17-77
+	android:name
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:35:27-74
+uses-sdk
+INJECTED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml
+INJECTED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:5:5-44
+MERGED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\a99db2a38e35dae396e5a1da642d0594\transformed\material-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\a99db2a38e35dae396e5a1da642d0594\transformed\material-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\0c0bde0817caf2f1c28ea88afbbe4f4b\transformed\appcompat-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\0c0bde0817caf2f1c28ea88afbbe4f4b\transformed\appcompat-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\mjkim\.gradle\caches\transforms-3\82fda4887cfeee16d1c78dde220aa16c\transformed\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\mjkim\.gradle\caches\transforms-3\82fda4887cfeee16d1c78dde220aa16c\transformed\constraintlayout-1.1.3\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\d16dc1364497823f5aae30a04d57f4a8\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\d16dc1364497823f5aae30a04d57f4a8\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\9b260396306f2b740b0d919fc8a94e9d\transformed\fragment-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\9b260396306f2b740b0d919fc8a94e9d\transformed\fragment-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\964c38fcc14ce2716e4dc3077fa5781b\transformed\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\964c38fcc14ce2716e4dc3077fa5781b\transformed\vectordrawable-animated-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\3805fa1719f11658f83bb2113b6c2f58\transformed\recyclerview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\3805fa1719f11658f83bb2113b6c2f58\transformed\recyclerview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\3d320ac7c682e9c6673cf1cdf57b5fec\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\3d320ac7c682e9c6673cf1cdf57b5fec\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\6599d443ec9fcad2fe1ecf661bc29826\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\6599d443ec9fcad2fe1ecf661bc29826\transformed\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\e922c11961eb2a543bc3c6998851bbab\transformed\vectordrawable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\e922c11961eb2a543bc3c6998851bbab\transformed\vectordrawable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\c98f2aa004206e7ab7ee4ab9940976f2\transformed\transition-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\c98f2aa004206e7ab7ee4ab9940976f2\transformed\transition-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\c899839ac7c9a6e56f43a8e981b56837\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\c899839ac7c9a6e56f43a8e981b56837\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\72ac7939cfac6baaf3ca938ea0e25983\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\72ac7939cfac6baaf3ca938ea0e25983\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\0f3122d9d2e5e8dc23576e8fe6033800\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\0f3122d9d2e5e8dc23576e8fe6033800\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\e6118a98c3dca7dda1d6212c3e4691b3\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\e6118a98c3dca7dda1d6212c3e4691b3\transformed\coordinatorlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\9853aee1f7496b00da3a1e7e03db31c3\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\9853aee1f7496b00da3a1e7e03db31c3\transformed\drawerlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\dcc8beb9f2c494ae723dfd28071e5f75\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\dcc8beb9f2c494ae723dfd28071e5f75\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\3ec8c36bdcb6d9403af1451c6cbbbdc9\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\3ec8c36bdcb6d9403af1451c6cbbbdc9\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\1bdaded5dc27734a14ead6f4714c9a16\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\1bdaded5dc27734a14ead6f4714c9a16\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\00e770c4d3af567ad5466675c647124f\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\00e770c4d3af567ad5466675c647124f\transformed\asynclayoutinflater-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\e4e695403a4b1dfe269c1898bc0a3d41\transformed\core-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\e4e695403a4b1dfe269c1898bc0a3d41\transformed\core-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\1484c8678257d93d8dfc87c9cb1e1687\transformed\versionedparcelable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\1484c8678257d93d8dfc87c9cb1e1687\transformed\versionedparcelable-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\78617eef17cb8d930b0d3c4952977d61\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\78617eef17cb8d930b0d3c4952977d61\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\022316015dcc5b40cdeec3a9553a09b8\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\022316015dcc5b40cdeec3a9553a09b8\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\ec7ae35cd5cdeedfeab623ff3eb8a023\transformed\lifecycle-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\ec7ae35cd5cdeedfeab623ff3eb8a023\transformed\lifecycle-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\33f9ae11ef56155b3b2832fb42f4eaf0\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\33f9ae11ef56155b3b2832fb42f4eaf0\transformed\documentfile-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\3d59831955753d61d5825790ec111d5d\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\3d59831955753d61d5825790ec111d5d\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\fbdb7653fe9386c61e41e900aed73803\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\fbdb7653fe9386c61e41e900aed73803\transformed\print-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\1a353f27bb2742272bd2d466733e885f\transformed\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\1a353f27bb2742272bd2d466733e885f\transformed\lifecycle-viewmodel-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\ad279b5b1283f10e8f1680c3c041704b\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\ad279b5b1283f10e8f1680c3c041704b\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\12da910a578e381d4aa9b9bf4d7c3da0\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\12da910a578e381d4aa9b9bf4d7c3da0\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\910aaa30dece4ed29046180756d12f43\transformed\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\910aaa30dece4ed29046180756d12f43\transformed\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\f103b902654e0b9db37925453467346f\transformed\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\mjkim\.gradle\caches\transforms-3\f103b902654e0b9db37925453467346f\transformed\core-runtime-2.0.0\AndroidManifest.xml:20:5-44
+	android:targetSdkVersion
+		INJECTED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.NFC
+ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:8:5-62
+	android:name
+		ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:8:22-59
+uses-feature#android.hardware.nfc
+ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:15:5-17:36
+	android:required
+		ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:17:9-33
+	android:name
+		ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:16:9-44
+uses-feature#android.hardware.nfc.hce
+ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:18:5-20:36
+	android:required
+		ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:20:9-33
+	android:name
+		ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:19:9-48
+uses-feature#android.hardware.bluetooth_le
+ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:21:5-23:36
+	android:required
+		ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:23:9-33
+	android:name
+		ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:22:9-53
+service#kr.co.ttcnc.ucsdk.dccctrllib.nfc.DccHostApduService
+ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:29:9-41:19
+	android:exported
+		ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:31:13-36
+	android:permission
+		ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:32:13-69
+	android:requireDeviceUnlock
+		ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:33:13-48
+	android:name
+		ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:30:13-79
+intent-filter#action:name:android.nfc.cardemulation.action.HOST_APDU_SERVICE
+ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:34:13-36:29
+action#android.nfc.cardemulation.action.HOST_APDU_SERVICE
+ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:35:17-93
+	android:name
+		ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:35:25-90
+meta-data#android.nfc.cardemulation.host_apdu_service
+ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:38:13-40:55
+	android:resource
+		ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:40:17-52
+	android:name
+		ADDED from [tmobilepasslib-v1.08-20240409.aar] C:\Users\mjkim\.gradle\caches\transforms-3\fd68959837b7f3294bdd1ae39fec0f7d\transformed\jetified-tmobilepasslib-v1.08-20240409\AndroidManifest.xml:39:17-75

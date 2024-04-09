@@ -1,0 +1,260 @@
+TMobilepass 안드로이드 NFC/BLE SDK 
+
+지원환경 : 안드로이드 5.0 , minSDK : 23 , targetSDK : 30
+라이브러리 파일명 : tmobilepasslib-v1.10-20210813.aar
+단말기 : TMR300 ( 암호화 , 평문 지원 ) , CCAL100TX ( 암호화 , 평문 지원 ) ,  NC400/TMPP ( 평문지원 )
+지원내용 : 
+  1) NFC 지원
+
+   1-1) 개요
+
+     - 안드로이드 NFC 기능을 지원하고 있는  단말기
+     - HCE 기능을 제공하고 있기 때문에 NFC CARD MODE 로 동작하는 것을 추천함.
+     - NFC 인식 범위 : 스마트폰의 안테나를 TMobilepass  리더기 안테나 상단에 터치 하면 동작하며 인식거리는 20 미리 이상 , 평균 35 미리 성능
+     - AES256 GCM 방식의 암복호화 방식을 사용하고 있으며 3-Pass Authentication Process  로직을 적용하여 보안성이 높음
+ 
+   1-2) 제공 기능
+     - 크리덴셜 암호화 데이타 전송 
+       > AES256/GCM , CBC 암복호화 알고리즘 지원
+       > 16 Byte 크리덴셜 데이타 지원
+       > 3-Pass Authentication 알고리즘 지원
+       > setCryptoTocken , activeCryptoTocken , pauseCryptoTocken , setClearCryptoToken
+     - 크리덴셜 평문 데이타 전송
+       > 256 Byte 데이타 전송
+       > setTocken , activeTocken , pauseTocken , setClearToken
+     - 안드로이드 NFC 에 크리덴셜 키를 등록 하여 사용하는 Always-On 기능 제공
+       > 크리덴셜 키를 등록하면 , 어플이 종료 되거나 스마트폰이 리부팅 되어도 등록된 크리덴셜 키를 계속 서비스 제공
+       > setCryptoTocken(TokenEncryped , iTimeout); iTimeout = 0 ( UNLIMITED_ALIVE_TIME )
+     - 어플리케이션 NFC 에 크리덴셜 키를 등록 하여 사용하는 어플리케이션이 살아 있는 동안기능 제공
+       > 크리덴셜 키를 등록하면 , 어플이 종료 되기 전까지 크리덴셜 키를 계속 서비스 제공
+       > setCryptoTocken(TokenEncryped , iTimeout); iTimeout = -1 ( APPLICATION_ALIVE_TIME )
+     - 인드로이드 NFC 에 AID 등록하고 제거 기능을 제공하는 Security-On 기능 제공
+       > 20 ~ 60 초 사이의 시간에 NFC AID 와 크리덴셜 키 값을 활성화 하여 서비스 제공
+       > 서비스 제공 시간 이외에는 해당 AID 서비스가 스마트폰에서는 노출되지 않음
+       > setCryptoTocken(TokenEncryped , iTimeout); iTimeout = MAX_ALIVE_TIME; (  20 <= iTimeout <= 60 )
+     - 서버와의 통신 체널에도 암호화 데이타 서비스 제공
+       > getServerAes256Cbc() 해당 암호화 로직을 서버에서 구현하여 적용
+       > 서버 암복호화 모듈에 getServerAes256Cbc() 함수에 해당하는 Java Native API ( JNI ) 로 구현된 로직 사용
+     - NFC 크리덴셜 키 중지 서비스 제공
+       > 특정 단말기의 상태에 따라서  크리덴셜 서비스 중지 기능 제공
+       > onGetTerminalId(String sTernimalId) sTernimalId 값을 판단할 수 있으며 조건에 따라 리턴값으로 서비스를 종료 할 수 있음.
+       > onGetTerminalId 리턴 값이 true 이면 서비스 계속 , false 이면 서비스 정지
+     - 리더기 지정 기능
+       > 사용하려고 하는 리더기의 모델명칭을 지정한다.
+       > apduManager = DccApduManager.getInstance(FullscreenMainActivity.this,  ReaderModel );
+       > ReaderModel.NC400LST 또는 ReaderModel.CCAL100TX  또는 ReaderModel.TMR300
+       > 단말기 지정이 잘못 된 경우 기능 동작이 정상적으로 되지 않
+
+
+     [NFC SDK 사전 작업]
+     // TMobilePass Library Load
+     implementation files('libs/tmobilepasslib-v1.08-20210610.aar')
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-feature android:name="android.hardware.bluetooth_le"  android:required="true" />
+
+    // FOR SAMPLE APPLICATION VIBRATION
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+     [NFC SDK 제공 함수]
+     /** NFC APDU 명령어 처리기 */
+     DccApduManager apduManager;
+
+     
+     /*
+     * Start Service DccHostApudService and
+     * NFC Handler Instance
+     */
+     apduManager = DccApduManager.getInstance(FullscreenMainActivity.this , ReaderModel.TMR300);
+
+     // NFC Event Hanlder
+     apduManager.setDccApduManagerHandler(FullscreenMainActivity.this, mConnectionHandler);
+
+     // Encryped Token
+     TokenEncryped = apduManager.getServerAes256Cbc(hexStringFromByteArray(sTokenValue.getBytes()).getBytes());
+
+     // Token Set and Start CardService
+     // iTimeout = UNLIMITED_ALIVE_TIME 로 설정되면
+     // NFC 서비스에 토큰이 계속해서 로딩되어 프로그램이 종료 되었거나
+     // 핸드폰이 재시작 되었어도 
+     // 계속해서 토큰 서비스를 제공함.
+     // iTimeout 값을 20 이상 , 60 이하의 값으로 지정하면
+     // 지정된 시간동안에만 토큰 서비스를 제공함. ( 보안을 높이기 위함 )
+     apduManager.setCryptoTocken(TokenEncryped , iTimeout);
+
+     [NFC 옵션 기능]
+     1)  등록한 토큰을 활성화 한다.  토큰을 등록하면 자동으로 활성화 되므로 활성화 API 를 별도 호출하지 않음
+     apduManager.activeCryptoTocken();
+     
+     2)  등록한 토큰을 비활성화 한다. 즉 토큰이 제출되지 않는다.
+     apduManager.pauseCryptoTocken();
+     
+     3)  등록된 토큰을 비활성화 하고 삭제 한다.. 토큰이 제출되지 않는다.
+     apduManager.setClearCryptoToken();
+
+     4)  IDccConnectionHandler Interface위 구현
+     
+        %%%  onGetTerminalId() 함수의 리턴값은 true 로 해야 NFC 통신으로 데이터가 전송됨.
+	리턴값을 false 로 하면 NFC 통신을 중단하고 FAILURE로 종료됨
+        @Override
+        public boolean onGetTerminalId(String sTernimalId) {
+            Log.i("DCCSDK" ,"DCCSDK onGetTockenCompleted sTerminalId=" + sTernimalId);
+            return true;
+        }
+	        @Override
+        public void onGetTockenCompleted(boolean result) {
+            if( result )
+                Log.i("DCCSDK" ,"DCCSDK onGetTockenCompleted SUCCESS");
+            else
+                Log.i("DCCSDK" ,"DCCSDK onGetTockenCompleted FAILURE");
+
+            Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            // 1초 진동
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+            } else {
+                vibrator.vibrate(500);
+            }
+            mbuttonNfcScan.setEnabled(true);
+        }
+
+      
+  2) BLE 지원
+     - 안드로이드 BLE 기능을 지원하고 있는 지원환경 범위 이상의 단말기
+     - 안드로이드 BLE 기능을 제공하고 있으며 , 단말기의 성능에 따라서 30미리 ~ 100미리 범위에서 인식함.
+     - TDES방식의 암복호화 방식을 사용하고 있으며 3-Pass Authentication Process  로직을 적용하여 보안성이 높음
+
+       
+ [BLE SDK 사전 작업]
+     // TMobilePass Library Load
+     implementation files('libs/tmobilepasslib-v1.08-20210610.aar')
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    
+    // FOR SAMPLE APPLICATION VIBRATION
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    
+ [BLE SDK 제공 함수]
+
+    /*
+     * TMobilePass BLE Crypto Service Implementation START
+     */
+    /** BLE BluetoothAdapter */
+    private BluetoothAdapter mBluetoothAdapter;
+    /** BLE Scanner */
+    BluetoothLeScanner btScanner;
+    private Handler mHandler;
+    private static final long SCAN_PERIOD = 5000;
+    private ScanSettings settings;
+    private List<ScanFilter> filters;
+    private BluetoothGatt mGatt;
+    /*
+     * TMobilePass BLE Crypto Service Implementation END
+     */
+
+    1) BLE BluetoothAdapter 생성
+
+        mHandler = new Handler();
+        if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
+            Toast.makeText(this, "BLE Not Supported",
+                    Toast.LENGTH_SHORT).show();
+            finish();
+        }
+        final BluetoothManager bluetoothManager =
+                (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
+        mBluetoothAdapter = bluetoothManager.getAdapter();
+        btScanner = mBluetoothAdapter.getBluetoothLeScanner();
+
+     2) Filter 적용
+        /*
+         * Fileter For TBleMobilePass Reader BLE Device
+         */
+	filters= new ArrayList<>();
+	ScanFilter scan_filter= new ScanFilter.Builder()
+		.setServiceUuid( new ParcelUuid( UUID_TDCS_SERVICE ) )
+		.build();
+	filters.add( scan_filter );
+
+     3) BLE Scan ( Button ) 함수 호출   bleCryptoStart();()
+        SCAN_PERIOD 이 후 stopScanning() 호출
+
+     4) LeScanCallback 구현
+	TMobilepass Reader 기기의 BLE Device 가 검색하여 확인 리더기인 경우 BLE 연결과 메시지 전송을 진행합니다.
+	BluetoothUtils.checkTMobilepassDevice(rssi , -45 , devicename )  함수의 
+		"guideRssi" 값은 출입통제인 경우 -45 값을 추천하며 , 패스 쓰루 서비스 인경우 -70 을 추천합니다.
+	if( BluetoothUtils.checkTMobilepassDevice(rssi , -45 , devicename ) )
+            {
+                // BLE SCAN STOP
+                stopScanning();
+
+		// TRN VALUE 할당
+                bTrnValue = BluetoothUtils.getTrnValue(result);    // bTRNVALUE
+                Log.d(TAG, "sTokenValue" + sTokenValue);
+
+
+		// BLE 연결
+                mHandler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        connectDevice(result.getDevice());
+                    }
+
+                }, 1);
+            }
+	
+
+     5) GattClientActionListener 를 implement 하여야 한다.
+         cryptoTokenProcessStart() 와 cryptoTokenProcessEnd() 함수의 내부 구현 로직은 변경하면 안됩니다.
+			
+	    @Override
+	    public void log(String s) {
+		Log.d(TAG, "log=" + s);
+	    }
+
+	    @Override
+	    public void logError(String s) {
+		Log.d(TAG, "logError=" + s);
+	    }
+
+
+	    @Override
+	    public void cryptoTokenProcessStart() {
+		Log.d(TAG, "cryptoTokenProcessStart");
+
+		/*
+		 * BLE Connected , Create CryptoToken and Transfer Start
+		 */
+		CryptoProcess cryptoProcessInstance = CryptoProcess.getInstance();
+		cryptoProcessInstance.putToken( sTokenValue.getBytes()  , bTrnValue);
+
+		CryptoProcess.bleWriteMessages( mGatt );
+		Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+		// 1초 진동
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+		    vibrator.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE));
+		} else {
+		    vibrator.vibrate(500);
+		}
+	    }
+
+	    @Override
+	    public void cryptoTokenProcessEnd() {
+		/*
+		 * BLE Connected , Create CryptoToken and Transfer End
+		 */
+		if( !CryptoProcess.bleWriteMessages( mGatt ))
+		{
+		    disconnectGattServer();
+		}
+	    }
+
+
+
+  
+     - 
