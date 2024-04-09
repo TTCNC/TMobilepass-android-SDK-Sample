@@ -87,34 +87,40 @@
 
 ### setCryptoToken(String sTokenValue, byte option, int alivetime, boolean isEncrypted)
 
- -brief
+ #### brief
 		토큰값을 적재한다. 안드로이드는 alivetime 옵션에 따라 토큰값의 유효 시간을 세 가지 모드 중 선택하여 사용할 수 있다. 
+		
 		예시)
+		
 			alivetime = 0; //NFC_ACTIVE_UNLIMITED_ALIVE_TIME
+			
 			alivetime = -1; //NFC_ACTIVE_APPLICATION_ALIVE_TIME
+			
 			alivetime = 60; //NFC_ACTIVE_MAX_ALIVE_TIME
+			
 
- -param 
-		sTokenValue : 토큰 값
+ #### param 
+		String sTokenValue : 토큰 값
 
-		option : 옵션 데이터
+		byte option : 옵션 데이터
 
-		alivetime : 토큰값의 유효 시간
+		int alivetime : 토큰값의 유효 시간
 
-		isEncrypted : 토큰값의 암호화 여부 (true: 이미 암호화 된 토큰값 , false: 평문으로 된 토큰값)
+		boolean isEncrypted : 토큰값의 암호화 여부 (true: 이미 암호화 된 토큰값 , false: 평문으로 된 토큰값)
  
- -retval : none
+ #### retval
+		none
 
 
 ### activeCryptoToken()
 
- -brief
+ #### brief
 		
 
- -param 
+ #### param 
 		none
  
- -retval
+ ####retval
 		none
 
 -------------------------------------------------------------------------------------------------------------------
