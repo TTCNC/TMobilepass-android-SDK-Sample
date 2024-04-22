@@ -379,12 +379,13 @@
 ### onError(byte[] commandApdu, byte[] responseApdu)
 
  **brief**
+ 
+		none
 		
  **param**
  
 		commandApdu : error command
-
-        responseApdu : response
+		responseApdu : response
  
  **retval**
  
@@ -393,8 +394,12 @@
 ### onDeactivated()
 
  **brief**
+ 
+		none
 		
  **param**
+ 
+		none
  
  **retval**
  
@@ -406,6 +411,8 @@
         블루투스 
 		
  **param**
+ 
+		none
  
  **retval**
  
