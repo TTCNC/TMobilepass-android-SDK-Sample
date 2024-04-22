@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"kr.co.ttcnc.ucsdk.dccctrllib"},{"l":"kr.co.ttcnc.ucsdk.dccctrllib.ble"},{"l":"kr.co.ttcnc.ucsdk.dccctrllib.nfc"},{"l":"kr.co.ttcnc.ucsdk.dccctrllib.nfc.readers"},{"l":"kr.co.ttcnc.ucsdk.dccctrllib.util"}];updateSearchResults();

@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements GattClientActionL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main_fullscreen);
 
         mContext = this;
@@ -380,7 +380,7 @@ public class MainActivity extends AppCompatActivity implements GattClientActionL
                 stopScanning();
 
                 bTrnValue = BluetoothUtils.getTrnValue(result);    // bTRNVALUE
-                Log.d(TAG, "sTokenValue" + sTokenValue);
+                Log.d(TAG, "sTokenValue : " + sTokenValue);
 
 
                 mHandler.postDelayed(() -> {
@@ -434,11 +434,12 @@ public class MainActivity extends AppCompatActivity implements GattClientActionL
          */
         CryptoProcess cryptoProcessInstance = CryptoProcess.getInstance();
 
+        // You must assigned "TokenEncryped"
+        byte[] TokenEncryped = null;
         byte[] token = null;
-        if (true) // is Encrypted
+        boolean EncryptOption = false;
+        if (EncryptOption == true) // is Encrypted
         {
-            // You must assigned "TokenEncryped"
-            byte[] TokenEncryped = null;
             try {
                 token = cryptoProcessInstance.getClientAes256Cbc(TokenEncryped);
             } catch (Exception e) {

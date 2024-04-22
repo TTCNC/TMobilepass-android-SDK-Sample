@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">TimoPass</string>
-    <string name="aid_description">DCC ACCESS CONTROL</string>
-    <string name="service_description">TimoPass SDK App</string>
-
-</resources>
