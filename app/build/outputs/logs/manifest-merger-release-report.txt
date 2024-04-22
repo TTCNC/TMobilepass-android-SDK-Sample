@@ -122,7 +122,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\mj
 activity#kr.co.ttcnc.ucsdk.timopass.MainActivity
 ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:25:9-37:20
 	android:screenOrientation
-		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:29:13-50
+		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:29:13-49
 	android:label
 		ADDED from D:\androidApp\newSDK\android_sdk-main\app\src\main\AndroidManifest.xml:28:13-45
 	android:exported
