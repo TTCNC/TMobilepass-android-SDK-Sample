@@ -424,7 +424,7 @@
 
 ### NFC SDK 사전 작업
 
- - 라이브러리 .aar 파일을 프로젝트 파일의 라이브러리 경로에 넣고, build.gradle의 dependencies에 추가합니다.
+ - 라이브러리 .aar 파일을 프로젝트 파일의 라이브러리 경로(app\libs)에 넣고, build.gradle의 dependencies에 추가합니다.
  
 		dependencies {
 			 implementation fileTree(include: ['*.aar'], dir: 'libs')
