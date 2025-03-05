@@ -461,8 +461,11 @@
         //Start Service DccHostApudService and NFC Handler Instance
         apduManager = DccApduManager.getInstance(MainActivity.this, ReaderModel.TMR300);
 
+        //SET AID (SDK 구매 시 안내 받은 AID 사용)
+        apduManager.setAID("00000000000000");
+
         // SET LABEL
-        apduManager.setApplicationLabel("TMOBILEPASS_CARD");
+        apduManager.setApplicationLabel("TIMOPASS_APPCARD");
         
         // NFC Event Hanlder
         apduManager.setDccApduManagerHandler(mConnectionHandler);
@@ -522,7 +525,7 @@
 ### BLE SDK 사전 작업
        
         // TMobilePass Library Load
-        implementation files('libs/tmobilepasslib-v1.08-20210610.aar')
+        implementation files('libs/tmobilepasslib-v1.08-20240409.aar')
 
         <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
         <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
