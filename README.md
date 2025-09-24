@@ -8,9 +8,9 @@
 ## 1. 개발 및 지원 환경
  Android Studio version : Giraffe(2022.3.1 Patch 3)
 
- Android : 5.0 ( minSDK : 23 / targetSDK : 33 )
+ Android : 6.0 ( minSDK : 23 / targetSDK : 35 )
 
- 라이브러리 파일명 : tmobilepasslib-v1.08-20240409.aar
+ 라이브러리 파일명 : tmobilepasslib-v1.15-20250922.aar
 
  리더기 : TMR300 ( 암호화 , 평문 지원 ) , CCAL100TX ( 암호화 , 평문 지원 ) ,  NC400/TMPP ( 평문지원 ) , NC900
 
