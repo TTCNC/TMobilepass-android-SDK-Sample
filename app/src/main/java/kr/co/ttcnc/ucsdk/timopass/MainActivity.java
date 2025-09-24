@@ -105,30 +105,28 @@ public class MainActivity extends AppCompatActivity implements GattClientActionL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         setContentView(R.layout.activity_main_fullscreen);
 
         mContext = this;
 
-        mbuttonNfcScan = (Button) findViewById(R.id.buttonNfcScan);
+        mbuttonNfcScan = findViewById(R.id.buttonNfcScan);
         mbuttonNfcScan.setOnClickListener(mClickListener);
-        mbuttonBleScan = (Button) findViewById(R.id.buttonBleScan);
+        mbuttonBleScan = findViewById(R.id.buttonBleScan);
         mbuttonBleScan.setOnClickListener(mClickListener);
 
-        validateSWitch = (ToggleButton) findViewById(R.id.switchKeyValidate);
+        validateSWitch = findViewById(R.id.switchKeyValidate);
         validateSWitch.setChecked(true);
         Log.i("DCCSDK", "isChecked : " + validateSWitch.isChecked());
-        btnClear = (Button) findViewById(R.id.btnClear);
+        btnClear = findViewById(R.id.btnClear);
 
-        /* TMobilePass NFC Service Check Start */
+        /* TMobilePass NFC Service Check */
         NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if (nfcAdapter == null) {
             Log.i("DCCSDK", "NfcAdapter is not Support So, we use BLE Service");
         }
 
-        /*
-         * TMobilePass BLE Crypto Service Implementation START
-         */
+        /* TMobilePass BLE Crypto Service Implementation */
         mHandler = new Handler();
         if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
             Toast.makeText(this, "BLE Not Supported",
@@ -145,18 +143,14 @@ public class MainActivity extends AppCompatActivity implements GattClientActionL
                 .build();
 
 
-        /*
-         * Filter For TBleMobilePass Reader BLE Device
-         */
+        /* Filter For TBleMobilePass Reader BLE Device */
         filters = new ArrayList<>();
         ScanFilter scan_filter = new ScanFilter.Builder()
                 .setServiceUuid(new ParcelUuid(BluetoothUtils.SERVICE_UUID))
                 .build();
         filters.add(scan_filter);
 
-        /*
-         * TMobilePass BLE Crypto Service Implementation END
-         */
+        /* TMobilePass BLE Crypto Service Implementation END  */
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             // Marshmallow+ Permission APIs
@@ -167,73 +161,84 @@ public class MainActivity extends AppCompatActivity implements GattClientActionL
 
     Button.OnClickListener mClickListener = new View.OnClickListener() {
 
+        @SuppressLint("NonConstantResourceId")
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.buttonNfcScan:
                     mbuttonNfcScan.setEnabled(false);
                     Log.d("MainActivity", "===> buttonNfcScan!");
 
-                    // TMobilePass NFC Crypto Service Implementation START
+                    /* TMobilePass NFC Crypto Service Implementation START */
 
-                    /*
-                     * Start Service DccHostApudService and
-                     * NFC Handler Instance
-                     */
-                    apduManager = DccApduManager.getInstance(MainActivity.this, ReaderModel.SMR300);
+                    /* Start Service DccHostApudService and NFC Handler Instance */
+                    /* ReaderModel = NFC Device Board Model */
+                    apduManager = DccApduManager.getInstance(MainActivity.this, ReaderModel.TMR300);
                     if (apduManager == null) {
-                        Log.i("DCCSDK", "apduManager is not created check errlog log");
+                        Log.i("DCCSDK", "apduManager is not created check error log");
                         return;
                     }
-
+                    /* Set Application Label */
+                    apduManager.setApplicationLabel("TIMOPASS_APPCARD");
                     //apduManager.setApplicationLabel("TMOBILEPASS_CARD");
-                    // NFC Event Handler
+
+                    /* NFC Event Handler */
                     apduManager.setDccApduManagerHandler(mConnectionHandler);
 
+                    /* HexString Type Tocken */
                     Log.i("DCCSDK", "sTokenValue : " + sTokenValue);
+
+                    /* ByteArray to HexaString Type Tocken */
+                    //sTokenValue = hexStringFromByteArray(sTokenValue.getBytes());
                     Log.i("DCCSDK", "sTokenValue : " + hexStringFromByteArray(sTokenValue.getBytes()));
 
+                    /* SetCryptoToken Example */
                     try {
                         apduManager.setCryptoToken(sTokenValue, (byte) 0x80, iTimeout, false);
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
 
-                    // Save and Start CardService
-                    //apduManager.setCryptoTocken(TokenEncryped, (byte) 0x80, iTimeout);   // timopass library 에서 사용하는 옵션 값.
+                    /* SetToken Example */
+                    //try {
+                    //    apduManager.setToken(sTokenValue,iTimeout);
+                    //} catch (Exception e) {
+                    //    throw new RuntimeException(e);
+                    //}
 
-                    validateSWitch.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            String status = "ToggleButton : " + validateSWitch.getText() + "\n";
-                            if (validateSWitch.getText().equals("Pause"))  // Current is Pause
-                            {
-                                Log.i("DCCSDK", "activeCryptoTocken");
-                                apduManager.activeCryptoToken();
-                            } else if (validateSWitch.getText().equals("Active"))  // Current is Active
-                            {
-                                Log.i("DCCSDK", "pauseCryptoTocken");
-                                apduManager.pauseCryptoToken();
-                            }
+                    /* Timopass Service Example */
+                    //try {
+                    //    apduManager.setCryptoToken(sTokenValue, (byte) 0x80, iTimeout, true);
+                    //} catch (Exception e) {
+                    //    throw new RuntimeException(e);
+                    //}
+
+                    /* Save and Start CardService */
+                    validateSWitch.setOnClickListener(view -> {
+                        String status = "ToggleButton : " + validateSWitch.getText() + "\n";
+                        if (validateSWitch.getText().equals("Pause"))  // Current is Pause
+                        {
+                            Log.i("DCCSDK", "activeCryptoTocken");
+                            apduManager.activeCryptoToken();
+                        } else if (validateSWitch.getText().equals("Active"))  // Current is Active
+                        {
+                            Log.i("DCCSDK", "pauseCryptoTocken");
+                            apduManager.pauseCryptoToken();
                         }
                     });
-                    btnClear.setOnClickListener(new Button.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            // 핸드폰에서 토큰 정보를 강제 Clear 한다.
-                            Log.i("DCCSDK", "setClearCryptoToken");
-                            apduManager.setClearCryptoToken();
-                        }
+                    btnClear.setOnClickListener(view -> {
+                        // 핸드폰에서 토큰 정보를 강제 Clear 한다.
+                        Log.i("DCCSDK", "setClearCryptoToken");
+                        apduManager.setClearCryptoToken();
                     });
-                    // TMobilePass NFC Crypto Service Implementation END
-
+                    /* TMobilePass NFC Crypto Service Implementation END */
                     break;
 
                 case R.id.buttonBleScan:
                     mbuttonBleScan.setEnabled(false);
-                    // TMobilePass BLE Crypto Service Implementation START
+                    /* TMobilePass BLE Crypto Service Implementation START */
                     Log.d("MainActivity", "===> buttonBleScan!");
                     bleCryptoStart();
-                    // TMobilePass BLE Crypto Service Implementation END
+                    /* TMobilePass BLE Crypto Service Implementation END */
                     break;
             }
         }
@@ -256,7 +261,7 @@ public class MainActivity extends AppCompatActivity implements GattClientActionL
         super.onDestroy();
     }
 
-    // TMobilePass NFC Crypto Service Implementation START
+    /* TMobilePass NFC Crypto Service Implementation START */
     private final IDccConnectionHandler mConnectionHandler = new IDccConnectionHandler() {
 
 
@@ -330,22 +335,18 @@ public class MainActivity extends AppCompatActivity implements GattClientActionL
             return true;
         }
     };
-    // TMobilePass NFC Crypto Service Implementation END
+    /* TMobilePass NFC Crypto Service Implementation END */
 
-    // TMobilePass BLE Crypto Service Implementation Start
-
+    /* TMobilePass BLE Crypto Service Implementation Start */
     @SuppressLint("MissingPermission")
     public void bleCryptoStart() {
         Log.d(TAG, "start bleCryptoStart");
 
         btScanner.startScan(filters, settings, leScanCallback);
 
-        mHandler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                mbuttonBleScan.setEnabled(true);
-                stopScanning();
-            }
+        mHandler.postDelayed(() -> {
+            mbuttonBleScan.setEnabled(true);
+            stopScanning();
         }, SCAN_PERIOD);
     }
 
@@ -434,7 +435,7 @@ public class MainActivity extends AppCompatActivity implements GattClientActionL
          */
         CryptoProcess cryptoProcessInstance = CryptoProcess.getInstance();
 
-        // You must assigned "TokenEncryped"
+        /* You must assigned "TokenEncryped" */
         byte[] TokenEncryped = null;
         byte[] token = null;
         boolean EncryptOption = false;
@@ -479,7 +480,7 @@ public class MainActivity extends AppCompatActivity implements GattClientActionL
         }
     }
 
-    // TMobilePass BLE Crypto Service Implementation End
+    /* TMobilePass BLE Crypto Service Implementation End */
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
