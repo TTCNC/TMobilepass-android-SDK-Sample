@@ -6,7 +6,7 @@
  인증에 사용되는 토큰을 어플리케이션에서 언제든지 활성화/비활성화 할 수 있다.
 
 ## 1. 개발 및 지원 환경
- Android Studio version : Giraffe(2022.3.1 Patch 3)
+ Android Studio Meerkat Feature Drop | 2024.3.2 Patch 1
 
  Android : 6.0 ( minSDK : 23 / targetSDK : 35 )
 
