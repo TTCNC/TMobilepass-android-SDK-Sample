@@ -4,8 +4,14 @@
  간단한 SDK 함수 호출을 통해 암호화 된 데이터로 사용자 인증을 할 수 있도록 보안 기능을 제공한다.
  
  인증에 사용되는 토큰을 어플리케이션에서 언제든지 활성화/비활성화 할 수 있다.
+ 
+## 라이브러리 업데이트 이력
+ - [ ]  2025-10-16 tmobilepasslib-v1.15-20250922.aar
+	- Android SDK 35 Version APP PAGE 16KB 지원 이슈 업데이트
+	- 플레이스토어 업데이트 확인 완료
+ 
 
-## 1. 개발 및 지원 환경
+## 1. 최신 개발 및 지원 환경
  Android Studio Meerkat Feature Drop | 2024.3.2 Patch 1
 
  Android : 6.0 ( minSDK : 23 / targetSDK : 35 )
@@ -161,6 +167,7 @@
  **brief**
 
         어플리케이션 AID를 설정한다. AID는 리더기에서 지원하는 AID와 동일해야 한다.
+		AID를 모르는 경우 리더기 공급사에 문의하도록 한다.
 
  **param**
 
@@ -429,7 +436,7 @@
 		dependencies {
 			 implementation fileTree(include: ['*.aar'], dir: 'libs')
 			 // TMobilePass Library Load
-			 implementation files('libs/tmobilepasslib-v1.08-20240409.aar')
+			 implementation files('libs/tmobilepasslib-v1.15-20250922.aar')
 		}
 
  - AndroidManifest.xml 에 아래와 같은 permission을 추가합니다.
@@ -525,7 +532,7 @@
 ### BLE SDK 사전 작업
        
         // TMobilePass Library Load
-        implementation files('libs/tmobilepasslib-v1.08-20240409.aar')
+        implementation files('libs/tmobilepasslib-v1.15-20250922.aar')
 
         <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
         <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
