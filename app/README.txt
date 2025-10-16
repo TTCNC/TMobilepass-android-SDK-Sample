@@ -1,4 +1,5 @@
-TMobilepass 안드로이드 NFC/BLE SDK 
+TMobilepass 안드로이드 NFC/BLE SDK First Release
+최신 업데이트 정보는 프로젝트 파일의 "README.md"를 참고해 주세요.
 
 지원환경 : 안드로이드 5.0 , minSDK : 23 , targetSDK : 30
 라이브러리 파일명 : tmobilepasslib-v1.10-20210813.aar

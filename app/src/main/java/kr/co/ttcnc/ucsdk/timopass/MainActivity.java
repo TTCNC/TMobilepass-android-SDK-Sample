@@ -173,13 +173,15 @@ public class MainActivity extends AppCompatActivity implements GattClientActionL
                     /* Start Service DccHostApudService and NFC Handler Instance */
                     /* ReaderModel = NFC Device Board Model */
                     apduManager = DccApduManager.getInstance(MainActivity.this, ReaderModel.TMR300);
+                    /* AID = Set Your Service AID */
+                    apduManager.setAID("F4100000000000");
                     if (apduManager == null) {
                         Log.i("DCCSDK", "apduManager is not created check error log");
                         return;
                     }
                     /* Set Application Label */
-                    apduManager.setApplicationLabel("TIMOPASS_APPCARD");
-                    //apduManager.setApplicationLabel("TMOBILEPASS_CARD");
+                    //apduManager.setApplicationLabel("TIMOPASS_APPCARD");
+                    apduManager.setApplicationLabel("TMOBILEPASS_CARD");
 
                     /* NFC Event Handler */
                     apduManager.setDccApduManagerHandler(mConnectionHandler);
