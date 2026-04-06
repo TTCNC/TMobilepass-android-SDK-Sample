@@ -9,16 +9,18 @@
  - [ ]  2025-10-16 tmobilepasslib-v1.15-20250922.aar
 	- Android SDK 35 Version APP PAGE 16KB 지원 이슈 업데이트
 	- 플레이스토어 업데이트 확인 완료
- 
+ - [ ]  2026-04-03 tmobilepasslib-v1.16-20260403.aar
+	- setTocken 함수 내 옵션 처리 관련 버그 수정
+	- NC-900 확인 완료
 
 ## 1. 최신 개발 및 지원 환경
  Android Studio Meerkat Feature Drop | 2024.3.2 Patch 1
 
  Android : 6.0 ( minSDK : 23 / targetSDK : 35 )
 
- 라이브러리 파일명 : tmobilepasslib-v1.15-20250922.aar
+ 라이브러리 파일명 : tmobilepasslib-v1.16-20260403.aar
 
- 리더기 : TMR300 ( 암호화 , 평문 지원 ) , CCAL100TX ( 암호화 , 평문 지원 ) ,  NC400/TMPP ( 평문지원 ) , NC900
+ 리더기 : TMR300 ( 암호화 , 평문 지원 ) , CCAL100TX ( 암호화 , 평문 지원 ) ,  NC400/TMPP ( 평문지원 ) , NC900 ( 암호화 , 평문 지원 )
 
 
 ## 2. 기능 개요
