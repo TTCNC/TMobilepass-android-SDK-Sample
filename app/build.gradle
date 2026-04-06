@@ -34,5 +34,5 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
     implementation 'com.google.android.material:material:1.13.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation files('libs/tmobilepasslib-v1.15-20250922.aar')
+    implementation files('libs/tmobilepasslib-v1.16-20260403.aar')
 }
